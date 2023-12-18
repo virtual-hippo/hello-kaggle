@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  anaconda:
+    image: continuumio/anaconda3:latest
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../work:/kaggle
+      - conda-env:/opt/conda/envs
+    working_dir: '/kaggle'
+    tty: true
+
+volumes:
+  conda-env:
